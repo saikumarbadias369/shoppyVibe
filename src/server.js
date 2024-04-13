@@ -1,4 +1,4 @@
-const app=require(".")
+const app=require("..")
 const connectDb =require('./config/db')
 require('dotenv').config()
 

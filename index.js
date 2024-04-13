@@ -1,7 +1,7 @@
 const express=require("express");
 const cors=require("cors");
 
-const authRoutes=require('./routes/auth.route.js')
+const authRoutes=require('./src/routes/auth.route.js')
 
 const app= express()
 
@@ -15,16 +15,18 @@ app.get("/",(req,res)=>{
 
 app.use('/auth',authRoutes)
 
-const userRouter=require('./routes/user.route.js')
+//loss400/auth/login
+const userRouter=require('./src/routes/user.route.js')
 app.use('/api/users',userRouter)
 
-const cartRouter=require('./routes/cart.route.js')
+const cartRouter=require('./src/routes/cart.route.js')
 app.use('/api/cart',cartRouter)
 
-const cartItemRouter=require('./routes/cartItem.route.js')
+const cartItemRouter=require('./src/routes/cartItem.route.js')
 app.use('/api/cart_items',cartItemRouter)
 
-const   productRouter=require('./routes/product.route.js')
+const   productRouter=require('./src/routes/product.route.js')
 app.use('/api/products',productRouter)
 
 module.exports=app;
+
